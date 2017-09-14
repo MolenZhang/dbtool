@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>数据库操作界面</title>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap-3.3.5/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/Font-Awesome-master/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<!-- <script type="text/javascript" src="/css/bootstrap-3.3.5/dist/js/bootstrap.js" ></script>-->
+        <script type="text/javascript" src="/js/jquery.js" ></script>
+    </head>
+    <body>
+    	<header class="header">
+            <div class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="javascript:void(0);">
+                            <h2>数据库操作平台</h2>
+                        </a>
+                    </div>
+                    <div class="head_right">欢迎登陆，用户：{{.UserName}}|
+						<a id="logout" href="#">退出系统</a>
+					</div>
+		        </div>
+            </div>
+        </header>
+        <div class="page-container">
+		<article>
+			<div class="db-form">
+				<form data-type="formAction" action="/execsql" from-redirect="/logout">
+					<div class="db-info">
+						<span><label>SQL语句：</label></span>
+						<input type="text" class="form-control" name="sql">
+					</div>
+					<div class="db-info">
+						<input type="submit" class="btn btn-default" value="执行">
+					</div>
+				</form>
+			</div>
+		</article>
+		<div id="sqlResult">
+			<table class="sqlTable table table-striped table-hover">
+				<thead id="sqlThead">
+					
+				</thead>
+				<tbody id="sqlTbody">
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+        
+    </body>
+    
+	<script type="text/javascript" src="/js/exec.js" ></script>
+</html>
+
